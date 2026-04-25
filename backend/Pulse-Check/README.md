@@ -139,13 +139,16 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 ### 5. Access the API
 
-| Interface | URL |
-|-----------|-----|
 | Swagger UI (Interactive Docs) | http://127.0.0.1:8000/docs |
 | ReDoc | http://127.0.0.1:8000/redoc |
 | Root Health Check | http://127.0.0.1:8000/ |
 
----
+### 🌐 Live Deployment
+| Interface | URL |
+|-----------|-----|
+| Live API | https://pulse-check-api-vxph.onrender.com |
+| Live Swagger Docs | https://pulse-check-api-vxph.onrender.com/docs |
+| Live ReDoc | https://pulse-check-api-vxph.onrender.com/redoc |
 
 ## API Documentation
 
