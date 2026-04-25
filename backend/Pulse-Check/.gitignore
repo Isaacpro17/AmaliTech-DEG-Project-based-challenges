@@ -1,0 +1,8 @@
+cat <<EOF > .gitignore
+__pycache__/
+*.pyc
+.env
+conda-env/
+.DS_Store
+*.egg-info
+EOF
