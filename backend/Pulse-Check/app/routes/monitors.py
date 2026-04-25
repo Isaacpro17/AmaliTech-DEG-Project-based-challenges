@@ -1,5 +1,6 @@
 import time
 from fastapi import APIRouter, HTTPException, status
+from typing import Optional
 from app.models import (
     MonitorStatus, 
     MonitorCreate, 
@@ -76,14 +77,22 @@ async def pause_monitor(monitor_id: str):
     return {"message": f"Monitor {monitor_id} has been paused.", "status": "paused"}
 
 @router.get("/", response_model=list[MonitorResponse])
-async def list_monitors():
-    """Returns a list of all registered monitors and their current states."""
+async def list_monitors(status: Optional[MonitorStatus] = None):
+    """
+    Returns a list of monitors. Optionally filters by status via query parameter.
+    """
     records = get_all_monitors()
     response = []
     now = time.time()
+
     for r in records:
+        # If status filter is provided, skip records that don't match
+        if status and r.status != status:
+            continue
+            
         remaining = max(0, int(r.deadline - now)) if r.status == MonitorStatus.active else 0
         response.append(MonitorResponse(**r.model_dump(), seconds_remaining=remaining))
+    
     return response
 
 @router.get("/{monitor_id}", response_model=MonitorResponse)
