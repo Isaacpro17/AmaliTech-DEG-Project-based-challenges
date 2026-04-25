@@ -1,4 +1,4 @@
-# 🐕 Pulse-Check-API — "Watchdog" Sentinel
+#  Pulse-Check-API — "Watchdog" Sentinel
 
 > A Dead Man's Switch API for monitoring remote devices in critical infrastructure environments.
 
@@ -6,7 +6,7 @@ Built for **CritMon Servers Inc.** — a company that monitors remote solar farm
 
 ---
 
-## 👤 Author
+##  Author
 
 **TUYISHIME Isaac**
 GitHub: [@IsaacPro17](https://github.com/IsaacPro17)
